@@ -104,10 +104,20 @@ def main() -> None:
     try:
         stat = MODEL_PATH.stat()
         model = load_model(str(MODEL_PATH), stat.st_mtime_ns, stat.st_size)
-    except InconsistentVersionWarning:
+    except InconsistentVersionWarning as error:
         st.error(
-            "La versión de scikit-learn difiere de la usada al entrenar. "
-            "Fija las versiones del notebook en requirements.txt y vuelve a desplegar."
+            f"El modelo se entrenó con scikit-learn {error.original_sklearn_version}, "
+            f"pero esta app tiene instalada la versión {error.current_sklearn_version}."
+        )
+        st.write(
+            "En requirements.txt, reemplaza la línea de scikit-learn por esta "
+            "versión exacta y guarda el cambio en GitHub:"
+        )
+        st.code(f"scikit-learn=={error.original_sklearn_version}", language="text")
+        st.caption(
+            "Actualiza también las demás dependencias a las del entrenamiento. "
+            "Si ya no tienes ese entorno, vuelve a entrenar con tus datos reales "
+            "y exporta juntos el modelo y requirements.txt."
         )
         st.stop()
     except Exception:
