@@ -1,7 +1,5 @@
-# Antes del despliegue, fija estas dependencias a las versiones del entrenamiento.
-# El README incluye una celda que genera este archivo con las versiones exactas.
 streamlit>=1.40,<2
-scikit-learn>=1.4,<2
+scikit-learn==1.6.1
 pandas>=2,<3
 numpy>=1.26,<3
 scipy>=1.11,<2
