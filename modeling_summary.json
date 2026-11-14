@@ -1,0 +1,44 @@
+{
+  "results_table": [
+    {
+      "model": "LinearSVC_TFIDF",
+      "accuracy": 0.7389162561576355,
+      "precision": 0.6984126984126984,
+      "recall": 0.8543689320388349,
+      "f1": 0.7685589519650655,
+      "roc_auc": NaN,
+      "time_sec": 2.0826034545898438
+    },
+    {
+      "model": "LogisticRegression_TFIDF",
+      "accuracy": 0.7315270935960592,
+      "precision": 0.6901960784313725,
+      "recall": 0.8543689320388349,
+      "f1": 0.7635574837310195,
+      "roc_auc": 0.835873786407767,
+      "time_sec": 5.015253782272339
+    },
+    {
+      "model": "MultinomialNB_TFIDF",
+      "accuracy": 0.7044334975369458,
+      "precision": 0.6524822695035462,
+      "recall": 0.8932038834951457,
+      "f1": 0.7540983606557377,
+      "roc_auc": NaN,
+      "time_sec": 1.3238415718078613
+    },
+    {
+      "model": "BiLSTM_Keras",
+      "accuracy": 0.7241379310344828,
+      "precision": 0.7043478260869566,
+      "recall": 0.7864077669902912,
+      "f1": 0.7431192660550459,
+      "roc_auc": 0.8038592233009709,
+      "time_sec": 45.39121341705322
+    }
+  ],
+  "top_models": [
+    "LinearSVC_TFIDF",
+    "LogisticRegression_TFIDF"
+  ]
+}
